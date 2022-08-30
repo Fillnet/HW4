@@ -5,8 +5,8 @@ public class Main {
         task3();
         task4();
         task5();
-        //task6();
-        //task7();
+        task6();
+        task7();
         //task8();
     }
 
@@ -70,30 +70,67 @@ public class Main {
 
     private static void task5() {
         System.out.println("Домашнее задание - 3 / Задача 1");
-        int age = 19;
+        int age = 20;
         String notGoToschool = "Детский сад";
         String School = " школу";
         String Univercity = " Университет";
         String Work = " работу ";
-        boolean canNotGoToSchool = age >= 2 || age <= 6;
-        boolean goToSchool = age >= 7 || age <= 18;
-        boolean goToUnivercity = age >= 18 || age <= 24;
+        boolean canNotGoToSchool = age >= 2 && age <= 6;
+        boolean goToSchool = age >= 7 && age <= 18;
+        boolean goToUnivercity = age >= 18 && age <= 24;
         boolean goToWork = age > 24;
         if (canNotGoToSchool) {
             System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, notGoToschool);
-        } else {
-            if (goToSchool) {
-                System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, School);
-            } else {
-                if (goToUnivercity) {
-                    System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, Univercity);
-                } else {
-                    if (goToWork) {
-                        System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, Work);
-                    }
-                }
-            }
         }
+        if (goToSchool) {
+            System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, School);
+        }
+        if (goToUnivercity) {
+            System.out.printf(" Если возраст человека равен %d , то ему нужно ходить в %s \n", age, Univercity);
+        }
+        if (goToWork) {
+            System.out.printf(" Если возраст человека равен %d , то ему нужно ходить на %s \n", age, Work);
+        }
+    }
+
+
+    private static void task6() {
+        System.out.println("Домашнее задание - 3 / Задача 2  ");
+        int childAge = 7;
+        String Parents = " взрослый есть";
+        boolean notAtracs = childAge < 5;
+        boolean atracsParents = childAge >= 5 && childAge < 14;
+        boolean freeAtracs = childAge > 14;
+        boolean parents = Parents == " взрослый есть";
+        if (notAtracs) {
+            System.out.println(" Ребенку нельзя кататься");
+        } else {
+            if (parents) {
+                System.out.println(" Ребенок может кататься в сопровождениии взрослого");
+            } else {
+                System.out.println(" Взрослого нет, ребенку кататься нельзя");
+            }
+
+            if (freeAtracs)
+                System.out.println(" Ребенок может кататься один");
+
+        }
+    }
+
+    private static void task7() {
+        System.out.println(" Домашнее задание - 3 / Задача 3");
+        int one = 230;
+        int two = 430;
+        int free = 1200;
+        boolean ones = one > two && one > free;
+        boolean twos = two > one && two > free;
+        boolean frees = free > one && free > two;
+        if (ones)
+            System.out.println(" Greatest number one = " + one);
+        if (twos)
+            System.out.println(" Greatest number two = " + two);
+        if (frees)
+            System.out.println("Greatest number free = " + free);
     }
 }
 
